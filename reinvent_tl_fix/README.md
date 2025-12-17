@@ -3,6 +3,8 @@
 > **🚀 Quick Start**: If you just want to fix the issue quickly, see [QUICK_START.md](QUICK_START.md)
 > 
 > **📊 Before/After**: See [COMPARISON.md](COMPARISON.md) for a side-by-side comparison
+>
+> **📑 Documentation Index**: See [INDEX.md](INDEX.md) for a complete navigation guide
 
 ## Problem
 
