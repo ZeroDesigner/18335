@@ -2,3 +2,6 @@ psets-old
 old.md
 .DS_Store
 *.lyx~
+__pycache__
+*.pyc
+example_config.json

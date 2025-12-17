@@ -1,0 +1,15 @@
+{
+  "run_type": "transfer_learning",
+  "model_file": "/path/to/prior.model",
+  "output_model_file": "/path/to/transfer.model",
+  "input_smiles_path": "/path/to/smiles.smi",
+  "parameters": {
+    "batch_size": 128,
+    "num_epochs": 100,
+    "type": "tanimoto",
+    "lower_threshold": 0.99,
+    "upper_threshold": 1.0,
+    "min_cardinality": 1,
+    "max_cardinality": 199
+  }
+}
