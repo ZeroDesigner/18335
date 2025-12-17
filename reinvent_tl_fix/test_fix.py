@@ -113,9 +113,10 @@ def test_flexible():
         print(f"\nValidated parameters (including extra fields):")
         print(f"  - Batch size: {config.parameters.batch_size}")
         print(f"  - Epochs: {config.parameters.num_epochs}")
-        # Access extra fields via __dict__
+        # Access extra fields by getting model fields from the class
+        model_fields = set(config.parameters.__class__.model_fields.keys()) if hasattr(config.parameters.__class__, 'model_fields') else set()
         extra_fields = {k: v for k, v in config.parameters.__dict__.items() 
-                       if k not in ['batch_size', 'num_epochs']}
+                       if k not in model_fields and not k.startswith('_')}
         print(f"  - Extra fields: {extra_fields}")
         return True
     except Exception as e:

@@ -33,24 +33,33 @@ def apply_patch():
     try:
         # Try to import the REINVENT4 config module
         # Note: The actual import path may vary depending on REINVENT4 version
-        try:
-            from reinvent.runmodes.TL.config import TLConfig, Parameters
-            config_module = 'reinvent.runmodes.TL.config'
-        except ImportError:
+        import_paths = [
+            ('reinvent.runmodes.TL.config', 'reinvent.runmodes.TL.config'),
+            ('reinvent.models.tl_config', 'reinvent.models.tl_config'),
+            ('reinvent.config', 'reinvent.config'),
+        ]
+        
+        TLConfig = None
+        Parameters = None
+        config_module = None
+        
+        for module_path, module_name in import_paths:
             try:
-                from reinvent.models.tl_config import TLConfig, Parameters
-                config_module = 'reinvent.models.tl_config'
+                module = __import__(module_path, fromlist=['TLConfig', 'Parameters'])
+                TLConfig = getattr(module, 'TLConfig', None)
+                Parameters = getattr(module, 'Parameters', None)
+                if TLConfig and Parameters:
+                    config_module = module_name
+                    break
             except ImportError:
-                try:
-                    # Try generic config import
-                    from reinvent.config import TLConfig, Parameters
-                    config_module = 'reinvent.config'
-                except ImportError:
-                    warnings.warn(
-                        "Could not find REINVENT4 TLConfig. "
-                        "Please ensure REINVENT4 is installed and update the import path in this patch."
-                    )
-                    return False
+                continue
+        
+        if not (TLConfig and Parameters):
+            warnings.warn(
+                "Could not find REINVENT4 TLConfig. "
+                "Please ensure REINVENT4 is installed and update the import path in this patch."
+            )
+            return False
         
         # Import Pydantic's ConfigDict
         from pydantic import ConfigDict

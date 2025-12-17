@@ -5,8 +5,13 @@ This example shows how to properly configure REINVENT4 transfer learning
 after applying the fix for the Pydantic validation error.
 """
 
-# Method 1: Import the monkey patch FIRST (before REINVENT4)
-# Uncomment this if using the monkey patch approach:
+# IMPORTANT: If you're using the monkey patch approach to fix REINVENT4,
+# you MUST import it before importing any REINVENT4 modules:
+#
+#     import monkey_patch  # Do this FIRST
+#     # Then import REINVENT4 modules
+#
+# Uncomment the line below if using the monkey patch:
 # import monkey_patch
 
 import json
