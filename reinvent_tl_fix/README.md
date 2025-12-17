@@ -1,6 +1,8 @@
 # REINVENT4 Transfer Learning Pydantic Validation Fix
 
 > **🚀 Quick Start**: If you just want to fix the issue quickly, see [QUICK_START.md](QUICK_START.md)
+> 
+> **📊 Before/After**: See [COMPARISON.md](COMPARISON.md) for a side-by-side comparison
 
 ## Problem
 
@@ -69,6 +71,7 @@ See `tl_config_fixed.py` for an example of how to properly define a TLConfig tha
 ### Documentation
 - `README.md` - This file, explaining the issue and solution
 - `QUICK_START.md` - ⚡ Fast track to fixing the issue (START HERE!)
+- `COMPARISON.md` - 📊 Before/after comparison and fix selection guide
 - `SOLUTION_SUMMARY.md` - Technical overview and analysis
 - `PATCH_INSTRUCTIONS.md` - Detailed step-by-step patching guide
 
