@@ -1,5 +1,7 @@
 # REINVENT4 Transfer Learning Pydantic Validation Fix
 
+> **🚀 Quick Start**: If you just want to fix the issue quickly, see [QUICK_START.md](QUICK_START.md)
+
 ## Problem
 
 When running REINVENT4 transfer learning with certain configuration parameters, you may encounter a Pydantic validation error:
@@ -64,9 +66,20 @@ See `tl_config_fixed.py` for an example of how to properly define a TLConfig tha
 
 ## Files in This Directory
 
+### Documentation
 - `README.md` - This file, explaining the issue and solution
+- `QUICK_START.md` - ⚡ Fast track to fixing the issue (START HERE!)
+- `SOLUTION_SUMMARY.md` - Technical overview and analysis
+- `PATCH_INSTRUCTIONS.md` - Detailed step-by-step patching guide
+
+### Code Files
 - `tl_config_original.py` - Demonstrates the problematic configuration
-- `tl_config_fixed.py` - Shows the corrected TLConfig model
+- `tl_config_fixed.py` - Shows two corrected TLConfig models
+- `monkey_patch.py` - Runtime patch utility for REINVENT4
+- `test_fix.py` - Comprehensive test suite
+- `example_usage.py` - Usage examples and demonstrations
+
+### Configuration Examples
 - `examples/config_original.json` - Example of problematic configuration
 - `examples/config_fixed.json` - Example of corrected configuration
 
